@@ -1,1182 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eduardo Pena Grigorio — Senior IT Analyst</title>
-  <meta name="description" content="Senior IT Analyst com 18+ anos em redes, segurança, cloud e automação. Fortinet, Mikrotik, Windows Server, Azure e DevOps.">
-  <meta name="keywords" content="Eduardo Grigorio, Analista de TI, Fortinet, Mikrotik, Windows Server, Azure, DevOps">
-  <meta name="author" content="Eduardo Pena Grigorio">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Eduardo Pena Grigorio — Senior IT Analyst">
-  <meta property="og:description" content="Senior IT Analyst com 18+ anos em redes, segurança, cloud e automação.">
-  <meta property="og:image" content="eduardogrigorio_social.jpg">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-primary: oklch(0.15 0.04 250);
-      --bg-card: oklch(0.18 0.04 250);
-      --bg-secondary: oklch(0.22 0.04 250);
-      --bg-muted: oklch(0.30 0.03 250);
-      --text-primary: oklch(0.95 0.01 250);
-      --text-secondary: oklch(0.85 0.01 250);
-      --text-muted: oklch(0.65 0.02 250);
-      --accent: oklch(0.70 0.15 200);
-      --accent-dark: oklch(0.15 0.04 250);
-      --border: oklch(0.35 0.05 250);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-image: 
-        linear-gradient(oklch(0.25 0.05 250 / 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, oklch(0.25 0.05 250 / 0.5) 1px, transparent 1px);
-      background-size: 20px 20px;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-    
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-    
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    
-    /* Header */
-    header {
-      background: oklch(0.18 0.04 250 / 0.5);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      font-size: 1.125rem;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .nav-links a {
-      padding: 0.375rem 0.75rem;
-      color: var(--text-primary);
-      text-decoration: none;
-      font-size: 0.875rem;
-      border-radius: 0.25rem;
-      transition: background 0.2s;
-    }
-    
-    .nav-links a:hover {
-      background: oklch(0.70 0.15 200 / 0.1);
-    }
-    
-    /* Cards */
-    .card {
-      background: var(--bg-card);
-      border: 2px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .card:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0 var(--accent);
-    }
-    
-    /* Hero Section */
-    .hero {
-      margin: 3rem 0;
-    }
-    
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-    
-    .photo-container {
-      position: relative;
-      width: 160px;
-    }
-    
-    .photo {
-      width: 160px;
-      height: 160px;
-      border: 2px solid var(--accent);
-      overflow: hidden;
-    }
-    
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .photo-accent {
-      position: absolute;
-      bottom: -8px;
-      right: -8px;
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-    }
-    
-    .hero-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    
-    .hero-tags {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    
-    .hero-description {
-      color: var(--text-secondary);
-      margin: 1rem 0;
-      line-height: 1.7;
-    }
-    
-    /* Badges */
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1rem 0;
-    }
-    
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      padding: 0.375rem 0.75rem;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-    }
-    
-    .badge svg {
-      width: 14px;
-      height: 14px;
-    }
-    
-    /* Buttons */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.625rem 1.25rem;
-      border-radius: 0.25rem;
-      font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: none;
-      font-size: 0.875rem;
-    }
-    
-    .btn-primary {
-      background: var(--accent);
-      color: var(--accent-dark);
-      border: 2px solid var(--accent);
-      box-shadow: 4px 4px 0 var(--accent);
-    }
-    
-    .btn-primary:hover {
-      background: oklch(0.75 0.15 200);
-    }
-    
-    .btn-outline {
-      background: transparent;
-      color: var(--text-primary);
-      border: 2px solid var(--border);
-    }
-    
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    
-    .btn svg {
-      width: 16px;
-      height: 16px;
-    }
-    
-    /* Section Headers */
-    .section {
-      margin: 3rem 0;
-    }
-    
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .section-header h2 {
-      font-size: 1.875rem;
-    }
-    
-    .section-accent {
-      width: 8px;
-      height: 32px;
-      background: var(--accent);
-    }
-    
-    /* Grid Layouts */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    .grid-3 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    
-    /* Skills */
-    .skill-item {
-      margin-bottom: 1rem;
-    }
-    
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-    
-    .skill-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-    
-    .skill-label svg {
-      width: 16px;
-      height: 16px;
-      color: var(--accent);
-    }
-    
-    .skill-percent {
-      font-size: 0.875rem;
-      color: var(--accent);
-    }
-    
-    .skill-bar {
-      height: 8px;
-      background: var(--bg-muted);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-    
-    .skill-fill {
-      height: 100%;
-      background: var(--accent);
-      transition: width 1s ease-out;
-    }
-    
-    /* Experience */
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .experience-card {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .experience-accent {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent);
-    }
-    
-    .experience-content {
-      padding-left: 1rem;
-    }
-    
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-    
-    .experience-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-    
-    .experience-title svg {
-      width: 20px;
-      height: 20px;
-      color: var(--accent);
-    }
-    
-    .experience-role {
-      color: var(--accent);
-      font-weight: 500;
-    }
-    
-    .experience-period {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-    }
-    
-    .experience-description {
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 0.5rem;
-    }
-    
-    .experience-highlight {
-      margin-top: 0.75rem;
-      padding: 0.75rem;
-      background: oklch(0.70 0.15 200 / 0.1);
-      border-left: 2px solid var(--accent);
-    }
-    
-    .experience-highlight p {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--accent);
-    }
-    
-    /* Tech Stack */
-    .tech-card h3 {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .tech-card h3 svg {
-      width: 16px;
-      height: 16px;
-    }
-    
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.375rem;
-    }
-    
-    .tech-tag {
-      padding: 0.25rem 0.625rem;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
-    }
-    
-    /* Education */
-    .education-card svg {
-      width: 24px;
-      height: 24px;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-    
-    .education-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-    
-    .education-institution {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
-    }
-    
-    .education-year {
-      font-size: 0.75rem;
-      color: var(--accent);
-    }
-    
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    
-    .contact-item svg {
-      width: 20px;
-      height: 20px;
-      color: var(--accent);
-    }
-    
-    .contact-item a {
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .contact-item a:hover {
-      color: var(--accent);
-    }
-    
-    .contact-list {
-      list-style: none;
-    }
-    
-    .contact-list li {
-      display: flex;
-      align-items: start;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-secondary);
-    }
-    
-    .contact-list li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      margin-top: 8px;
-      flex-shrink: 0;
-    }
-    
-    /* Footer */
-    footer {
-      background: oklch(0.18 0.04 250 / 0.5);
-      backdrop-filter: blur(10px);
-      border-top: 2px solid var(--border);
-      padding: 1.5rem 0;
-      margin-top: 3rem;
-      text-align: center;
-    }
-    
-    footer p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-    
-    footer p:first-child {
-      margin-bottom: 0.5rem;
-    }
-    
-    footer p:last-child {
-      font-size: 0.75rem;
-    }
-    
-    /* Responsive */
-    @media (min-width: 768px) {
-      .hero-grid {
-        grid-template-columns: auto 1fr;
-      }
-      
-      .hero-info h1 {
-        font-size: 3rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.5rem;
-      }
-      
-      .grid-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-      
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .container {
-        padding: 0 2rem;
-      }
-      
-      .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    /* Icon styles */
-    .icon {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      stroke-width: 0;
-      stroke: currentColor;
-      fill: currentColor;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Currículo moderno e responsivo de Eduardo Pena Grigorio." />
+<title>Eduardo Grigorio - Currículo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f7f9;color:#333;line-height:1.6;}
+header{display:flex;align-items:center;justify-content:center;flex-direction:column;padding:50px 20px;background:#0b2d4d;color:#fff;text-align:center;}
+header img{width:160px;height:160px;border-radius:50%;object-fit:cover;margin-bottom:20px;}
+header h1{font-size:2rem;font-weight:600;}
+header p{max-width:500px;margin:10px auto;font-size:1rem;color:#dce6ef;}
+.btns{margin-top:20px;display:flex;gap:15px;justify-content:center;}
+.btn{padding:12px 20px;background:#1fa2ff;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:0.9rem;transition:.3s;}
+.btn:hover{opacity:.8;}
+
+nav{position:fixed;top:0;left:0;width:100%;background:#0b2d4d;padding:10px;z-index:10;display:flex;justify-content:center;gap:20px;}
+nav a{color:#fff;text-decoration:none;font-size:0.9rem;transition:.3s;}
+nav a:hover{color:#1fa2ff;}
+
+section{padding:60px 20px;max-width:1000px;margin:auto;}
+h2{margin-bottom:20px;color:#0b2d4d;font-size:1.8rem;}
+
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin-bottom:20px;}
+
+.timeline{border-left:3px solid #1fa2ff;padding-left:20px;}
+.timeline-item{margin-bottom:25px;position:relative;}
+.timeline-item:before{content:'';width:12px;height:12px;background:#1fa2ff;border-radius:50%;position:absolute;left:-27px;top:5px;}
+
+.tags span{display:inline-block;background:#1fa2ff;color:#fff;padding:6px 12px;border-radius:6px;margin:5px;font-size:0.85rem;}
+
+footer{text-align:center;padding:25px;background:#0b2d4d;color:#fff;margin-top:40px;}
+
+#topBtn{display:none;position:fixed;bottom:20px;right:20px;padding:12px 18px;background:#1fa2ff;color:white;border:none;border-radius:8px;cursor:pointer;z-index:99;}
+
+.dark{background:#111;color:#ddd;}
+.dark header{background:#000;}
+.dark nav{background:#000;}
+.dark .card{background:#222;color:#ddd;}
+</style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="4 17 10 11 4 5"></polyline>
-            <line x1="12" y1="19" x2="20" y2="19"></line>
-          </svg>
-          <span class="mono">eduardo.dev</span>
-        </div>
-        <div class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#experiencia">Experiência</a>
-          <a href="#skills">Skills</a>
-          <a href="#formacao">Formação</a>
-          <a href="#contato">Contato</a>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="card">
-        <div class="hero-grid">
-          <div class="photo-container">
-            <div class="photo">
-              <img src="eduardogrigorio_social.jpg" alt="Eduardo Pena Grigorio">
-            </div>
-            <div class="photo-accent"></div>
-          </div>
-          
-          <div class="hero-info">
-            <h1>Eduardo Pena Grigorio</h1>
-            <p class="hero-subtitle mono">Senior IT Analyst</p>
-            <p class="hero-tags">Redes · Segurança · Cloud · Automação</p>
-            
-            <p class="hero-description">
-              Senior IT Analyst com 18+ anos de experiência em ambientes NOC, Data Center, projetos de expansão e conformidade LGPD. Especialista em Fortinet, Mikrotik, Windows Server, Azure e automação com Python.
-            </p>
-            
-            <div class="badges">
-              <span class="badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                Salvador, BA
-              </span>
-              <span class="badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                eduardo.grigorio@gmail.com
-              </span>
-              <span class="badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                (71) 98800-3296
-              </span>
-            </div>
-            
-            <div class="btn-group">
-              <button class="btn btn-primary" onclick="downloadCV()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Download CV
-              </button>
-              <a href="https://linkedin.com/in/eduardo-grigorio-557a4234" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                LinkedIn
-              </a>
-              <a href="mailto:eduardo.grigorio@gmail.com" class="btn btn-outline">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                E-mail
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<nav>
+<a href="#sobre">Sobre</a>
+<a href="#experiencia">Experiência</a>
+<a href="#habilidades">Habilidades</a>
+<a href="#formacao">Formação</a>
+<a href="#contato">Contato</a>
+</nav>
 
-    <!-- About Section -->
-    <section id="sobre" class="section">
-      <div class="section-header">
-        <div class="section-accent"></div>
-        <h2>Sobre</h2>
-      </div>
-      
-      <div class="grid-2">
-        <div class="card">
-          <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Resumo Profissional</h3>
-          <p class="hero-description" style="margin: 0 0 1rem 0;">
-            Analista Sênior de TI com sólida carreira em projetos de infraestrutura, segurança de redes e escalabilidade. Atuou diretamente na expansão do projeto Credcesta (4 → 51 unidades). Forte atuação em monitoramento (Zabbix, Grafana), firewalls (FortiGate), automação (Python, Shell) e administração de servidores Windows/Linux.
-          </p>
-          <p class="hero-description" style="margin: 0;">
-            <strong style="color: var(--accent);">Diferenciais:</strong> experiência em NOC/Data Center, projetos de campo, conformidade LGPD e visão DevOps.
-          </p>
-        </div>
-        
-        <div class="card">
-          <h3 style="color: var(--accent); margin-bottom: 1rem;">Principais Skills</h3>
-          <div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-label">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                  </svg>
-                  Sistemas Operacionais
-                </div>
-                <span class="skill-percent mono">85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" style="width: 85%;"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-label">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
-                  Redes & Segurança
-                </div>
-                <span class="skill-percent mono">92%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" style="width: 92%;"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-label">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                  </svg>
-                  Cloud & MS 365
-                </div>
-                <span class="skill-percent mono">78%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" style="width: 78%;"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-label">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="4 17 10 11 4 5"></polyline>
-                    <line x1="12" y1="19" x2="20" y2="19"></line>
-                  </svg>
-                  Monitoramento & Automação
-                </div>
-                <span class="skill-percent mono">80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" style="width: 80%;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<header>
+<img src="eduardogrigorio_social.jpg" alt="Eduardo Grigorio">
+<h1>Eduardo Pena Grigorio</h1>
+<p>Senior IT Analyst — Redes, Automação, Segurança, Cloud, Infraestrutura e Suporte Avançado.</p>
+<div class="btns">
+<button class="btn" id="downloadCv" onclick="downloadCV()">Download CV</button>
+<a href="#contato"><button class="btn">Contato</button></a>
+</div>
+</header>
 
-    <!-- Experience Section -->
-    <section id="experiencia" class="section">
-      <div class="section-header">
-        <div class="section-accent"></div>
-        <h2>Experiência Profissional</h2>
-      </div>
-      
-      <div class="experience-list">
-        <div class="card experience-card">
-          <div class="experience-accent"></div>
-          <div class="experience-content">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  ACB Processamento de Dados
-                </h3>
-                <p class="experience-role">Analista Sênior</p>
-              </div>
-              <span class="experience-period mono">Mar 2025 — Presente</span>
-            </div>
-            <p class="experience-description">
-              Responsável por infraestrutura, monitoramento (Zabbix/Grafana), Fortinet, Mikrotik, Windows Server 2022, Microsoft 365. Gestão de VPNs, segmentação (VLAN/QoS), LGPD e automação em Python.
-            </p>
-            <div class="experience-highlight">
-              <p>Infraestrutura do projeto Credcesta (51 unidades)</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card experience-card">
-          <div class="experience-accent"></div>
-          <div class="experience-content">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  Grupo Terra Firme
-                </h3>
-                <p class="experience-role">Analista de TI Pleno</p>
-              </div>
-              <span class="experience-period mono">Jun 2023 — Mar 2025</span>
-            </div>
-            <p class="experience-description">
-              Implementação e gestão de monitoramento e segurança; administração Windows/Linux; implementação de firewalls e automação Shell/Python.
-            </p>
-          </div>
-        </div>
-        
-        <div class="card experience-card">
-          <div class="experience-accent"></div>
-          <div class="experience-content">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  Credcesta
-                </h3>
-                <p class="experience-role">Analista de TI Pleno</p>
-              </div>
-              <span class="experience-period mono">Jul 2021 — Jun 2023</span>
-            </div>
-            <p class="experience-description">
-              Estruturação inicial da infraestrutura, topologia de rede, roteamento, VPNs e projetos de intranet open-source.
-            </p>
-            <div class="experience-highlight">
-              <p>Crescimento de 4 → 51 unidades (+1.175%)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="grid-2">
-        <div class="card" style="background: oklch(0.70 0.15 200 / 0.05);">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-            <svg style="width: 32px; height: 32px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-            <div>
-              <p style="font-size: 0.875rem; color: var(--text-muted);">Crescimento Credcesta</p>
-              <p style="font-size: 1.875rem; font-weight: 700;" class="mono">4 → 51</p>
-            </div>
-          </div>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">
-            +1.175% de expansão operacional (2021-2025)
-          </p>
-        </div>
-        
-        <div class="card" style="background: oklch(0.70 0.15 200 / 0.05);">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-            <svg style="width: 32px; height: 32px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <div>
-              <p style="font-size: 0.875rem; color: var(--text-muted);">Disponibilidade</p>
-              <p style="font-size: 1.25rem; font-weight: 700;">Campo & Viagens</p>
-            </div>
-          </div>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">
-            Projetos, campo e viagens
-          </p>
-        </div>
-      </div>
-    </section>
+<section id="sobre">
+<h2>Sobre</h2>
+<div class="card">
+<p>Analista de TI Sênior com mais de 18 anos de experiência em redes, infraestrutura, segurança, automação e cloud. Forte atuação em NOC, Data Center, Fortinet, Mikrotik, Windows Server, Azure e monitoramentos.</p>
+</div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="section-header">
-        <div class="section-accent"></div>
-        <h2>Competências Técnicas</h2>
-      </div>
-      
-      <div class="grid-3" style="margin-bottom: 2rem;">
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            Sistemas Operacionais
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">Windows Server (2008R2→2022)</span>
-            <span class="tech-tag">Linux (Ubuntu/Debian/CentOS)</span>
-            <span class="tech-tag">Active Directory</span>
-            <span class="tech-tag">Hyper-V</span>
-            <span class="tech-tag">VMware</span>
-          </div>
-        </div>
-        
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            Redes & Segurança
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">Fortinet (FortiGate/FortiAP)</span>
-            <span class="tech-tag">Mikrotik</span>
-            <span class="tech-tag">Ubiquiti</span>
-            <span class="tech-tag">Cisco</span>
-            <span class="tech-tag">VLAN</span>
-            <span class="tech-tag">QoS</span>
-            <span class="tech-tag">VPN</span>
-            <span class="tech-tag">LGPD</span>
-          </div>
-        </div>
-        
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="4 17 10 11 4 5"></polyline>
-              <line x1="12" y1="19" x2="20" y2="19"></line>
-            </svg>
-            Monitoramento & Automação
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">Zabbix</span>
-            <span class="tech-tag">Grafana</span>
-            <span class="tech-tag">Nagios</span>
-            <span class="tech-tag">GLPI</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Shell Script</span>
-          </div>
-        </div>
-        
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-            </svg>
-            Cloud & Serviços
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">Microsoft 365</span>
-            <span class="tech-tag">Exchange</span>
-            <span class="tech-tag">SharePoint</span>
-            <span class="tech-tag">Teams</span>
-            <span class="tech-tag">Azure</span>
-          </div>
-        </div>
-        
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            Desenvolvimento & Design
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Web Design</span>
-            <span class="tech-tag">Intranet</span>
-            <span class="tech-tag">Edição de imagens</span>
-          </div>
-        </div>
-        
-        <div class="card tech-card">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            Comunicação
-          </h3>
-          <div class="tech-tags">
-            <span class="tech-tag">CFTV</span>
-            <span class="tech-tag">VoIP (SIP)</span>
-            <span class="tech-tag">CRM</span>
-            <span class="tech-tag">ServiceNow</span>
-            <span class="tech-tag">GLPI</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-          <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="8" r="7"></circle>
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-          </svg>
-          Certificações
-        </h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span class="badge">Microsoft Security</span>
-          <span class="badge">NSE 1</span>
-          <span class="badge">Fortinet NSE 3 (em andamento)</span>
-          <span class="badge">LPI Linux Essentials</span>
-          <span class="badge">PHP & MySQL (Alura)</span>
-        </div>
-      </div>
-    </section>
+<section id="experiencia">
+<h2>Experiência</h2>
+<div class="timeline">
 
-    <!-- Education Section -->
-    <section id="formacao" class="section">
-      <div class="section-header">
-        <div class="section-accent"></div>
-        <h2>Formação Acadêmica</h2>
-      </div>
-      
-      <div class="grid-3">
-        <div class="card education-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-          </svg>
-          <h3>Pós-Graduação em DevOps</h3>
-          <p class="education-institution">Estácio de Sá</p>
-          <p class="education-year mono">Dez/2025</p>
-        </div>
-        
-        <div class="card education-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-          </svg>
-          <h3>Gestão de TI</h3>
-          <p class="education-institution">Dom Pedro II</p>
-          <p class="education-year mono">2013–2015</p>
-        </div>
-        
-        <div class="card education-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-          </svg>
-          <h3>Ensino Médio Técnico</h3>
-          <p class="education-institution">IFBA</p>
-          <p class="education-year mono">2008–2010</p>
-        </div>
-      </div>
-    </section>
+<div class="timeline-item">
+<h3>ACB Processamento de Dados — Analista Sênior</h3>
+<p>2025 - Atual</p>
+<p>Atuação em redes, segurança, automação e administração de ambientes críticos.</p>
+</div>
 
-    <!-- Contact Section -->
-    <section id="contato" class="section">
-      <div class="section-header">
-        <div class="section-accent"></div>
-        <h2>Contato</h2>
-      </div>
-      
-      <div class="card">
-        <div class="contact-grid">
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Entre em Contato</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-              Disponível para viagens e atuação em campo. Preferência por projetos de infraestrutura e segurança.
-            </p>
-            <div>
-              <div class="contact-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <a href="mailto:eduardo.grigorio@gmail.com">eduardo.grigorio@gmail.com</a>
-              </div>
-              <div class="contact-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <a href="tel:+5571988003296">(71) 98800-3296</a>
-              </div>
-              <div class="contact-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <a href="https://linkedin.com/in/eduardo-grigorio-557a4234" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Resumo Rápido</h3>
-            <ul class="contact-list">
-              <li>18+ anos em TI</li>
-              <li>Fortinet, Mikrotik, Windows Server, Linux</li>
-              <li>Zabbix · Grafana · GLPI</li>
-              <li>Automação: Python, Shell</li>
-              <li>Disponível para projetos de campo</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="timeline-item">
+<h3>Grupo Terra Firme — Analista de TI Pleno</h3>
+<p>2023 - 2025</p>
+<p>Infraestrutura, cloud, endpoints, VPN, melhorias de processos.</p>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p class="mono">© 2025 Eduardo Pena Grigorio · Senior IT Analyst</p>
-      <p>Salvador, BA · Brasil</p>
-    </div>
-  </footer>
+<div class="timeline-item">
+<h3>Credcesta — Analista de TI Pleno</h3>
+<p>2021 - 2023</p>
+<p>Redes, suporte avançado, gestão de ativos e infraestrutura corporativa.</p>
+</div>
 
-  <script>
-    function downloadCV() {
-      const cvText = `Eduardo Pena Grigorio — Senior IT Analyst
-E-mail: eduardo.grigorio@gmail.com
-Telefone: (71) 98800-3296
+<div class="timeline-item">
+<h3>WEX Brasil Tech — Analista / NOC</h3>
+<p>2013 - 2020</p>
+<p>Monitoramento, Data Center, script automação, incidentes críticos.</p>
+</div>
 
-Resumo: Senior IT Analyst com 18+ anos em redes, segurança, cloud e automação. Fortinet, Mikrotik, Windows Server, Azure. Experiência em NOC/DataCenter.
+</div>
+</section>
 
-Experiência: ACB Processamento de Dados (2025-Presente) — Analista Sênior
-Grupo Terra Firme (2023-2025) — Analista de TI Pleno
-Credcesta (2021-2023) — Analista de TI Pleno
-WEX Brasil Tech (2013-2020) — Analista / NOC
+<section id="habilidades">
+<h2>Habilidades</h2>
+<div class="card tags">
+<span>Fortinet</span><span>Mikrotik</span><span>Windows Server</span><span>Linux</span>
+<span>Azure</span><span>Microsoft 365</span><span>Zabbix</span><span>Grafana</span>
+<span>Python</span><span>VPN</span><span>Firewall</span>
+</div>
+</section>
 
-Formação: Pós-Graduação em DevOps — Estácio (2025), Gestão de TI — Dom Pedro II (2015)
+<section id="formacao">
+<h2>Formação</h2>
+<div class="card">
+<p><strong>Pós-Graduação DevOps — Estácio</strong> (2025)</p>
+<p><strong>Gestão de TI — Dom Pedro II</strong> (2015)</p>
+</div>
+</section>
 
-Skills: Fortinet, Mikrotik, Windows Server, Linux, Zabbix, Grafana, Python, Azure, Microsoft 365
+<section id="contato">
+<h2>Contato</h2>
+<div class="card">
+<form id="contactForm">
+<input type="text" id="nome" placeholder="Seu nome" required style="width:100%;padding:12px;margin:6px 0;border-radius:6px;">
+<input type="email" id="email" placeholder="Seu e-mail" required style="width:100%;padding:12px;margin:6px 0;border-radius:6px;">
+<textarea id="mensagem" placeholder="Mensagem" required style="width:100%;padding:12px;margin:6px 0;border-radius:6px;height:120px;"></textarea>
+<button class="btn" style="width:100%;">Enviar</button>
+</form>
 
-LinkedIn: https://linkedin.com/in/eduardo-grigorio-557a4234`;
+<p style="margin-top:20px;"><strong>E-mail:</strong> eduardo.grigorio@gmail.com</p>
+<p><strong>Telefone:</strong> (71) 98800-3296</p>
+<p><strong>LinkedIn:</strong> linkedin.com/in/eduardo-grigorio-557a4234</p>
+</div>
+</section>
 
-      const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Eduardo_Grigorio_CV.txt';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-    
-    // Smooth scroll for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
+<button id="topBtn" onclick="topFunction()">Topo</button>
+
+<footer>© 2025 Eduardo Grigorio</footer>
+
+<script>
+// ===== Scroll suave =====
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// ===== Botão topo =====
+window.onscroll=function(){
+  document.getElementById("topBtn").style.display = (document.documentElement.scrollTop>200)?"block":"none";
+};
+function topFunction(){window.scrollTo({top:0,behavior:'smooth'});}
+
+// ===== Download CV (PDF da raiz) =====
+function downloadCV(){
+  const a=document.createElement('a');
+  a.href='Eduardo_Grigorio_CV.pdf';
+  a.download='Eduardo_Grigorio_CV.pdf';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+// ===== Form =====
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  alert("Mensagem enviada.");
+});
+</script>
+
 </body>
 </html>
