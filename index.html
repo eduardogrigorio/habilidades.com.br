@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Pena Grigorio - Currículo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A4;
+            margin: 15mm 15mm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.35;
+            color: #333;
+            background: white;
+            font-size: 10.5px;
+        }
+        
+        .container {
+            width: 100%;
+            background: white;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 18px 25px;
+            margin: -15mm -15mm 0 -15mm;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-photo {
+            flex-shrink: 0;
+        }
+        
+        .header-photo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+        
+        .header-content {
+            flex-grow: 1;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        
+        .header .title {
+            font-size: 13px;
+            font-weight: 300;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            font-size: 10.5px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-item::before {
+            content: "●";
+            color: #60a5fa;
+            font-size: 6px;
+        }
+        
+        /* Main Content */
+        .content {
+            margin-top: 12px;
+        }
+        
+        .section {
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #3b82f6;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #60a5fa;
+        }
+        
+        /* Summary */
+        .summary {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 6px;
+            padding-left: 12px;
+            border-left: 2px solid #3b82f6;
+        }
+        
+        .education-item .degree {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #1e3a8a;
+            line-height: 1.3;
+        }
+        
+        .education-item .institution {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 8px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 4px;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .experience-header {
+            margin-bottom: 6px;
+        }
+        
+        .experience-header .company {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        
+        .experience-header .position {
+            font-size: 11px;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-top: 1px;
+        }
+        
+        .experience-header .period {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+            margin-top: 1px;
+        }
+        
+        .experience-description {
+            font-size: 10.5px;
+            line-height: 1.4;
+            color: #555;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 2.5px solid #3b82f6;
+        }
+        
+        .skill-category .category-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+        
+        .skill-category .skills-list {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+        
+        .cert-item {
+            padding: 6px 8px;
+            background: #f8fafc;
+            border-radius: 3px;
+            font-size: 9.5px;
+            color: #555;
+            border-left: 2px solid #60a5fa;
+        }
+        
+        .cert-item strong {
+            color: #1e3a8a;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 10px;
+        }
+        
+        /* Highlights */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 10.5px;
+            color: #555;
+            line-height: 1.3;
+        }
+        
+        .highlight-item::before {
+            content: "✓";
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        /* Growth Metrics */
+        .growth-metrics {
+            margin-top: 10px;
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .metrics-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .progress-circles {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .circle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .circle-outer {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .circle-20 {
+            background: linear-gradient(90deg, #e5e7eb 0%, #e5e7eb 50%, transparent 50%), 
+                        linear-gradient(162deg, #3b82f6 50%, transparent 50%);
+            border: 3px solid #3b82f6;
+        }
+        
+        .circle-100 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            border: 3px solid #1e3a8a;
+        }
+        
+        .circle-75 {
+            background: linear-gradient(90deg, transparent 0%, transparent 50%, #d1fae5 50%), 
+                        linear-gradient(342deg, #10b981 50%, transparent 50%);
+            border: 3px solid #10b981;
+        }
+        
+        .circle-inner {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .circle-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1e3a8a;
+            line-height: 1;
+        }
+        
+        .circle-text {
+            font-size: 7px;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.1;
+        }
+        
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Photo -->
+        <div class="header">
+            <div class="header-photo">
+                <img src="eduardogrigorio_social.jpg" alt="Eduardo Pena Grigorio">
+            </div>
+            <div class="header-content">
+                <h1>EDUARDO PENA GRIGORIO</h1>
+                <div class="title">Senior IT Analyst | Network & Security | Cloud & Infrastructure | DevOps</div>
+                <div class="contact-info">
+                    <div class="contact-item">eduardo.grigorio@gmail.com</div>
+                    <div class="contact-item">(71) 98800-3296</div>
+                    <div class="contact-item">linkedin.com/in/eduardo-grigorio-557a4234</div>
+                    <div class="contact-item">Salvador, Bahia, Brasil</div>
+                    <div class="contact-item">Cristão</div>
+                    <div class="contact-item">Habilitação: Categoria B</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Summary -->
+            <div class="section">
+                <h2 class="section-title">Resumo Profissional</h2>
+                <p class="summary">
+                    Senior IT Analyst com 18+ anos de experiência em TI, especializado em gestão de redes, segurança cibernética, infraestrutura de servidores e cloud computing. Vivência em ambientes de alta criticidade, NOC e Data Center, garantindo estabilidade, performance e conformidade LGPD. Expertise em Fortinet, Mikrotik, Windows Server, Linux, Microsoft 365 e Azure. Conhecimento em ML/IA aplicados a TI. Pós-Graduação em DevOps (em conclusão).
+                </p>
+            </div>
+            
+            
+            <!-- Two Column Section -->
+            <div class="two-column">
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Formação Acadêmica</h2>
+                    <div class="education-item">
+                        <div class="degree">Pós-Graduação em DevOps</div>
+                        <div class="institution">Estácio de Sá (Dez/2025)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Gestão de TI</div>
+                        <div class="institution">Dom Pedro II (2013-2015)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Especialização em TI</div>
+                        <div class="institution">EEEMBA (2005-2006)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Ensino Médio Técnico</div>
+                        <div class="institution">IFBA (2008-2010)</div>
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="section">
+                    <h2 class="section-title">Idiomas</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="category-name">Português</div>
+                            <div class="skills-list">Nativo</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="category-name">Inglês</div>
+                            <div class="skills-list">Elementar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience -->
+            <div class="section">
+                <h2 class="section-title">Experiência Profissional</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">ACB Processamento de Dados</div>
+                        <div class="position">Analista Sênior | Senior IT Analyst</div>
+                        <div class="period">Março 2025 - Presente (9 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Analista de TI responsável pela infraestrutura do projeto Credcesta. Atuação em 51 unidades em todo território nacional (1 Escritório, 2 Call Centers, 1 Backoffice e 47 lojas). Desenvolvimento de sistema de monitoramento com Zabbix, Grafana e GLPI. Segurança de redes com Fortinet (Teledata). Administração de Mikrotik, Windows Server 2022, Microsoft 365, Exchange e SharePoint. Gestão de VPNs, segmentação de redes (VLANs, QoS), políticas LGPD. Automação com Python. Troubleshooting.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Grupo Terra Firme</div>
+                        <div class="position">Analista de TI Pleno</div>
+                        <div class="period">Junho 2023 - Março 2025 (1 ano 10 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Participação ativa no crescimento exponencial da infraestrutura de TI do projeto Credcesta em todo território nacional. Desenvolvimento e implementação de sistema de monitoramento (Zabbix, Grafana, GLPI). Segurança de redes com Fortinet (Teledata). Gerenciamento de redes Fortinet e Mikrotik. Administração Windows Server 2022 e Linux. Implementação de firewalls, VPNs. Automação Shell Script e Python. Redes Wireless (FortiAP, UniFi, Ubiquiti).
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Credcesta</div>
+                        <div class="position">Analista de TI Pleno</div>
+                        <div class="period">Julho 2021 - Junho 2023 (2 anos)</div>
+                    </div>
+                    <div class="experience-description">
+                        Início no projeto Credcesta com 4 unidades (1 Escritório central, 1 Call Center, Loja Piedade e Loja Feira de Santana). Estruturação inicial da infraestrutura de TI. Gerenciamento de redes com conformidade LGPD. Administração Windows Server 2022 e Linux. Topologia de rede, roteamento estático e VPN. Gestão de contratos. Scripts de automação. Projetos Intranet open source.
+                    </div>
+                </div>
+                
+                <!-- Growth Metrics -->
+                <div class="growth-metrics">
+                    <div class="metrics-title">Crescimento Projeto Credcesta (2021-2025)</div>
+                    <div class="progress-circles">
+                        <div class="circle-item">
+                            <div class="circle-outer circle-20">
+                                <div class="circle-inner">
+                                    <div class="circle-number">4</div>
+                                    <div class="circle-text">unidades<br/>2021</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="circle-item">
+                            <div class="circle-outer circle-100">
+                                <div class="circle-inner">
+                                    <div class="circle-number">51</div>
+                                    <div class="circle-text">unidades<br/>2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="circle-item">
+                            <div class="circle-outer circle-75">
+                                <div class="circle-inner">
+                                    <div class="circle-number">+1.175%</div>
+                                    <div class="circle-text">crescimento</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Page 2 -->
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Experiência Profissional (continuação)</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">WEX Brasil Tech</div>
+                        <div class="position">Analista de TI</div>
+                        <div class="period">Junho 2018 - Julho 2020 (2 anos 2 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Administração servidores Linux e Windows Server 2012. Automação de tarefas. Backup open source. Gestão VPN, roteamento e topologia de rede.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">WEX Brasil Tech</div>
+                        <div class="position">NOC - Network Operations Center</div>
+                        <div class="period">Outubro 2013 - Julho 2018 (4 anos 10 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Monitoramento servidores Web LINUX e Windows. Gestão VPNs Fortigate e PFSense. Ambientes virtualizados (VMware). Monitoramento Zabbix, Nagios, New Relic. Chamados GLPI e Service Now. Call Center e redes de pagamento.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Grupo Asset</div>
+                        <div class="position">Analista de T.I.</div>
+                        <div class="period">Dezembro 2012 - Junho 2013 (7 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Manutenção servidores Windows 2008 R2 e 2012. Configuração Mikrotik. Gestão Active Directory. Monitoramento Zabbix. PABX, cabeamento estruturado e roteadores WIFI CISCO.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">NET Serviços de Comunicação S/A</div>
+                        <div class="position">Comercial P2P</div>
+                        <div class="period">Agosto 2011 - Julho 2012 (1 ano)</div>
+                    </div>
+                    <div class="experience-description">
+                        Prospecção e negociação. Soluções de internet de alta velocidade. Suporte pós-venda. Oportunidades de upsell e cross-sell.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">FBE - Fundação Bahiana de Engenharia</div>
+                        <div class="position">Professor de TI</div>
+                        <div class="period">Janeiro 2003 - Março 2008 (5 anos 3 meses)</div>
+                    </div>
+                    <div class="experience-description">
+                        Projeto PRONATEC: suporte hardware/software, redes básicas, cidadania digital, pacote Office avançado. Capacitação profissional em TI.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Consultoria em TI & Designer Gráfico Freelancer</div>
+                        <div class="position">Consultor de TI e Designer Gráfico</div>
+                        <div class="period">2003 - Presente (22+ anos)</div>
+                    </div>
+                    <div class="experience-description">
+                        Consultoria especializada em soluções personalizadas de TI. Design gráfico: logos, banners, web design, layouts, edição de imagens, redes sociais e materiais corporativos.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills -->
+            <div class="section">
+                <h2 class="section-title">Competências Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-name">Sistemas Operacionais</div>
+                        <div class="skills-list">Windows Server (2008 R2, 2012, 2022), Linux (Ubuntu, Debian, CentOS), Active Directory, Hyper-V, VMware</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-name">Redes & Segurança</div>
+                        <div class="skills-list">Fortinet (FortiGate, FortiAP), Mikrotik, Ubiquiti, UniFi, Cisco, VPN, Firewalls, VLAN, QoS, LGPD</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-name">Cloud & Serviços</div>
+                        <div class="skills-list">Microsoft 365, Exchange, SharePoint, Teams, Azure</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-name">Monitoramento & Automação</div>
+                        <div class="skills-list">Zabbix, Grafana, Nagios, New Relic, Python, Shell Script</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Page 3 -->
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Competências Técnicas (continuação)</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-name">Comunicação & Colaboração</div>
+                        <div class="skills-list">CFTV, VoIP (SIP), CRM, Zimbra, GLPI, Service Now</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-name">Desenvolvimento & Design</div>
+                        <div class="skills-list">Web Design, PHP, MySQL, Intranet, Design Gráfico, Edição de Imagens</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="section">
+                <h2 class="section-title">Certificações e Cursos</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <strong>Microsoft Security</strong>
+                        Segurança Microsoft
+                    </div>
+                    <div class="cert-item">
+                        <strong>NSE 1</strong>
+                        Network Security Associate
+                    </div>
+                    <div class="cert-item">
+                        <strong>Fortinet NSE 3</strong>
+                        Em andamento
+                    </div>
+                    <div class="cert-item">
+                        <strong>LPI Linux Essentials</strong>
+                        Alura
+                    </div>
+                    <div class="cert-item">
+                        <strong>PHP e MySQL</strong>
+                        Alura
+                    </div>
+                    <div class="cert-item">
+                        <strong>Fundamentos de Rede</strong>
+                        Fundação Bradesco
+                    </div>
+                    <div class="cert-item">
+                        <strong>Segurança da Informação</strong>
+                        Fundação Bradesco
+                    </div>
+                    <div class="cert-item">
+                        <strong>Windows 7/8/10</strong>
+                        Fundação Bradesco
+                    </div>
+                    <div class="cert-item">
+                        <strong>Web Design</strong>
+                        SENAI
+                    </div>
+                    <div class="cert-item">
+                        <strong>Manutenção de PCs</strong>
+                        SENAI
+                    </div>
+                    <div class="cert-item">
+                        <strong>Informática Avançada</strong>
+                        EEEMBA
+                    </div>
+                    <div class="cert-item">
+                        <strong>Eletrônica Básica</strong>
+                        CINE
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Highlights -->
+            <div class="section">
+                <h2 class="section-title">Diferenciais</h2>
+                <div class="highlights">
+                    <div class="highlight-item">18+ anos de experiência em TI com vivência em ambientes de alta criticidade</div>
+                    <div class="highlight-item">Expertise em segurança de redes e conformidade regulatória (LGPD)</div>
+                    <div class="highlight-item">Proficiência em múltiplas tecnologias enterprise (Fortinet, Mikrotik, Microsoft 365)</div>
+                    <div class="highlight-item">Experiência comprovada em NOC e Data Center</div>
+                    <div class="highlight-item">Habilidades em automação e scripting (Python, Shell Script)</div>
+                    <div class="highlight-item">Conhecimento em Machine Learning e IA aplicados a TI</div>
+                    <div class="highlight-item">Pós-Graduação em DevOps em conclusão</div>
+                    <div class="highlight-item">Consultoria e design gráfico com 20+ anos de experiência</div>
+                    <div class="highlight-item">Disponibilidade para viagens e atuação em campo</div>
+                    <div class="highlight-item">Experiência em gestão de projetos e aplicação estratégica de tecnologias</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
